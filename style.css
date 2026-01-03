@@ -1,0 +1,229 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/style.css b/style.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..79ce0a4b5b6ae8c1cd078fa1d4976e6ead6e1a06
+--- /dev/null
++++ b/style.css
+@@ -0,0 +1,219 @@
++:root {
++  color-scheme: light;
++  --paper: #f7f4ef;
++  --ink: #2f2a26;
++  --muted: #7a6f66;
++  --accent: #c7b9a8;
++  --line: #e2d9ce;
++  --max-width: 860px;
++}
++
++* {
++  box-sizing: border-box;
++  margin: 0;
++  padding: 0;
++}
++
++body {
++  font-family: "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
++  background: var(--paper);
++  color: var(--ink);
++  line-height: 1.7;
++  letter-spacing: 0.02em;
++}
++
++.page {
++  max-width: var(--max-width);
++  margin: 0 auto;
++  padding: 2.5rem 1.5rem 4rem;
++  display: flex;
++  flex-direction: column;
++  gap: 3.5rem;
++}
++
++h1,
++h2,
++h3 {
++  font-weight: 500;
++  letter-spacing: 0.04em;
++}
++
++h2 {
++  font-size: 1.25rem;
++  margin-bottom: 1.25rem;
++}
++
++h3 {
++  font-size: 1rem;
++  margin-bottom: 0.5rem;
++}
++
++p {
++  color: var(--ink);
++}
++
++.hero {
++  padding-top: 1rem;
++  text-align: center;
++  display: flex;
++  flex-direction: column;
++  gap: 0.75rem;
++}
++
++.hero__line {
++  font-size: 0.95rem;
++  color: var(--muted);
++  text-transform: uppercase;
++  letter-spacing: 0.18em;
++}
++
++.hero__names {
++  font-size: clamp(1.9rem, 5vw, 2.8rem);
++}
++
++.hero__date {
++  font-size: 1rem;
++  color: var(--muted);
++}
++
++.story__content {
++  display: grid;
++  gap: 1rem;
++  color: var(--muted);
++}
++
++.details__grid {
++  display: grid;
++  gap: 1.5rem;
++  border-top: 1px solid var(--line);
++  border-bottom: 1px solid var(--line);
++  padding: 1.5rem 0;
++}
++
++.map-link {
++  display: inline-flex;
++  margin-top: 0.4rem;
++  color: var(--muted);
++  text-decoration: none;
++  border-bottom: 1px solid var(--accent);
++  padding-bottom: 0.1rem;
++}
++
++.map-link:hover,
++.map-link:focus {
++  color: var(--ink);
++  border-bottom-color: var(--ink);
++}
++
++.rsvp__note {
++  color: var(--muted);
++  margin-bottom: 1.5rem;
++}
++
++.rsvp__form {
++  display: grid;
++  gap: 1.25rem;
++}
++
++label,
++legend {
++  font-size: 0.95rem;
++  color: var(--muted);
++}
++
++input,
++select,
++textarea,
++button {
++  font: inherit;
++}
++
++input,
++select,
++textarea {
++  width: 100%;
++  border: 1px solid var(--line);
++  background: #fff;
++  padding: 0.65rem 0.75rem;
++  margin-top: 0.5rem;
++  border-radius: 6px;
++  color: var(--ink);
++}
++
++input:focus,
++select:focus,
++textarea:focus {
++  outline: 2px solid var(--accent);
++  border-color: var(--accent);
++}
++
++.rsvp__attendance {
++  border: 1px solid var(--line);
++  padding: 0.75rem;
++  border-radius: 6px;
++  display: grid;
++  gap: 0.6rem;
++}
++
++.rsvp__attendance label {
++  display: flex;
++  align-items: center;
++  gap: 0.5rem;
++  color: var(--ink);
++}
++
++button {
++  border: none;
++  background: var(--accent);
++  color: var(--ink);
++  padding: 0.75rem 1.25rem;
++  border-radius: 999px;
++  cursor: pointer;
++  justify-self: start;
++  letter-spacing: 0.05em;
++}
++
++button:hover,
++button:focus {
++  background: #b8a793;
++}
++
++.footer {
++  text-align: center;
++  padding: 2rem 1.5rem 3rem;
++  color: var(--muted);
++  border-top: 1px solid var(--line);
++}
++
++@media (min-width: 768px) {
++  .page {
++    padding: 4rem 2.5rem 5rem;
++    gap: 4.5rem;
++  }
++
++  .details__grid {
++    grid-template-columns: repeat(3, minmax(0, 1fr));
++  }
++
++  .rsvp__form {
++    grid-template-columns: repeat(2, minmax(0, 1fr));
++  }
++
++  .rsvp__form label:nth-of-type(1),
++  .rsvp__form label:nth-of-type(3),
++  .rsvp__form label:nth-of-type(4) {
++    grid-column: span 1;
++  }
++
++  .rsvp__form label:nth-of-type(2) {
++    grid-column: span 1;
++  }
++
++  .rsvp__attendance {
++    grid-column: span 2;
++  }
++
++  .rsvp__form button {
++    grid-column: span 2;
++  }
++}
+ 
+EOF
+)
