@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Akira & Hana — Wedding</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- Hero section -->
+      <header class="hero">
+        <p class="hero__line">A quiet morning, a gentle vow.</p>
+        <h1 class="hero__names">Akira Watanabe &amp; Hana Mori</h1>
+        <p class="hero__date">December 12, 2026</p>
+      </header>
+
+      <!-- Our story section -->
+      <section class="story" id="story">
+        <h2>Our story</h2>
+        <div class="story__content">
+          <p>
+            We met on a rainy afternoon, both reaching for the same small table
+            in a crowded café. We shared tea, then hours, then a slow sense of
+            familiarity.
+          </p>
+          <p>
+            Some days felt like a soft page turning: shared walks, handwritten
+            notes, and dinners that stretched into the night. In those quiet
+            moments, our home grew.
+          </p>
+          <p>
+            We do not remember the exact day we decided, only the feeling of
+            calm certainty. This celebration is a gentle thank-you for the love
+            that brought us here.
+          </p>
+        </div>
+      </section>
+
+      <!-- Wedding details section -->
+      <section class="details" id="details">
+        <h2>Wedding details</h2>
+        <div class="details__grid">
+          <div>
+            <h3>Date</h3>
+            <p>Saturday, December 12, 2026</p>
+          </div>
+          <div>
+            <h3>City &amp; venue</h3>
+            <p>Kyoto, Japan — Kamo River House</p>
+            <a class="map-link" href="#" aria-label="Map link placeholder">View map</a>
+          </div>
+          <div>
+            <h3>Dress code</h3>
+            <p>Soft neutrals and comfortable layers.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP section -->
+      <section class="rsvp" id="rsvp">
+        <h2>RSVP</h2>
+        <p class="rsvp__note">
+          Please reply by October 15, 2026. We cannot wait to share the day with
+          you.
+        </p>
+        <form class="rsvp__form" action="#" method="post">
+          <label>
+            Your name
+            <input type="text" name="name" placeholder="Full name" required />
+          </label>
+          <fieldset class="rsvp__attendance">
+            <legend>Attendance</legend>
+            <label>
+              <input type="radio" name="attendance" value="yes" required />
+              Joyfully accept
+            </label>
+            <label>
+              <input type="radio" name="attendance" value="no" />
+              Regretfully decline
+            </label>
+          </fieldset>
+          <label>
+            Number of guests
+            <select name="guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+          <label>
+            Note
+            <textarea name="note" rows="3" placeholder="A short note"></textarea>
+          </label>
+          <button type="submit">Send RSVP</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <p>With gratitude, we look forward to a day shared together.</p>
+    </footer>
+  </body>
+</html>
